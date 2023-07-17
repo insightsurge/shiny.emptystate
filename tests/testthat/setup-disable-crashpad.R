@@ -15,14 +15,13 @@ chromote::set_chrome_args(c(
   # https://peter.sh/experiments/chromium-command-line-switches/#disable-crash-reporter
   #> Disable crash reporter for headless. It is enabled by default in official builds
   "--disable-crash-reporter",
-  "--no-sandbox",
   chromote::default_chrome_args()
 ))
 
 # Make sure the temp folder is removed when testing is complete
 withr::defer({
   # Close the browser
-  try(chromote::default_chromote_object()$get_browser()$close())
+
 
   # Clean up chromote sessions
   gc() # Run R6 finalizer methods
