@@ -15,6 +15,7 @@ chromote::set_chrome_args(c(
   # https://peter.sh/experiments/chromium-command-line-switches/#disable-crash-reporter
   #> Disable crash reporter for headless. It is enabled by default in official builds
   "--disable-crash-reporter",
+  "--no-sandbox",
   chromote::default_chrome_args()
 ))
 
